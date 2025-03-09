@@ -7,29 +7,26 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>Edit Note</h1>
-  <nav>
-    <ul>
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="listNotes.jsp">All Notes</a></li>
-    </ul>
-  </nav>
-</header>
+<jsp:include page="header.jsp" />
 <main>
-  <form action="editNote" method="post">
-    <input type="hidden" name="id" value="${note.id}">
-    <label for="label">Label:</label>
-    <input type="text" id="label" name="label" value="${note.label}" required>
-    <br>
-    <label for="content">Content:</label>
-    <textarea id="content" name="content" required>${note.content}</textarea>
-    <br>
-    <button type="submit">Update Note</button>
-  </form>
+  <section>
+    <h1>Edit Note</h1>
+    <form action="editNote" method="post">
+      <input type="hidden" name="id" value="${note.id}">
+      <div>
+        <label for="noteLabel">Label:</label>
+        <input type="text" id="noteLabel" name="label" value="${note.label}" required>
+      </div>
+      <div>
+        <label for="noteContent">Content:</label>
+        <textarea id="noteContent" name="content" required>${note.content}</textarea>
+      </div>
+      <div>
+        <button type="submit">Update Note</button>
+      </div>
+    </form>
+  </section>
 </main>
-<footer>
-  <p>&copy; 2025 My Note Application</p>
-</footer>
+<jsp:include page="footer.jsp" />
 </body>
 </html>
