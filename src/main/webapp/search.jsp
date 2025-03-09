@@ -36,8 +36,6 @@
     </c:if>
   </div>
 </main>
-<footer>
-  <p>&copy; 2025 My Note Application</p>
-</footer>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

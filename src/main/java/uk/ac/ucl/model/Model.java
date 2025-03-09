@@ -16,7 +16,7 @@ import org.apache.commons.csv.CSVPrinter;
 public class Model
 {
 
-  private static final String NOTES_CSV_PATH = "data/notes_storage.csv";
+  private static final String NOTES_CSV_PATH = "data/notes.csv";
 
   // Read notes from CSV
   public List<Note> readNotesFromCsv()

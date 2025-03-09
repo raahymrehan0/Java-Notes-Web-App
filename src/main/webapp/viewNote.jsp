@@ -27,8 +27,6 @@
     <!-- Include additional details as needed (e.g., URL, image if applicable) -->
   </article>
 </main>
-<footer>
-  <p>&copy; 2025 My Note Application</p>
-</footer>
+<jsp:include page="footer.jsp" />
 </body>
 </html>
