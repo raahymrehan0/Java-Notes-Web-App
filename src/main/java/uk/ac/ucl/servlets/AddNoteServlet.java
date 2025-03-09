@@ -23,7 +23,6 @@ public class AddNoteServlet extends HttpServlet
         // Get note details from the form
         String noteTitle = request.getParameter("noteTitle");
         String noteContent = request.getParameter("noteContent");
-
         // Add the new note to the model
         model.addNote(noteTitle, noteContent);
 

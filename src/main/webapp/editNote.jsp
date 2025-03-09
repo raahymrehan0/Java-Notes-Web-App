@@ -14,12 +14,12 @@
     <form action="edit-note.html" method="post">
       <input type="hidden" name="id" value="${note.id}">
       <div>
-        <label for="noteLabel">Label:</label>
-        <input type="text" id="noteLabel" name="label" value="${note.title}" required>
+        <label for="noteTitle">Label:</label>
+        <input type="text" id="noteTitle" name="noteTitle" value="${note.title}" required>
       </div>
       <div>
         <label for="noteContent">Content:</label>
-        <textarea id="noteContent" name="content" required>${note.content}</textarea>
+        <textarea id="noteContent" name="noteContent" required>${note.content}</textarea>
       </div>
       <div>
         <button type="submit">Update Note</button>
