@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <jsp:include page="/meta.jsp"/>
   <title>Edit Note</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -15,7 +15,7 @@
       <input type="hidden" name="id" value="${note.id}">
       <div>
         <label for="noteLabel">Label:</label>
-        <input type="text" id="noteLabel" name="label" value="${note.label}" required>
+        <input type="text" id="noteLabel" name="label" value="${note.title}" required>
       </div>
       <div>
         <label for="noteContent">Content:</label>

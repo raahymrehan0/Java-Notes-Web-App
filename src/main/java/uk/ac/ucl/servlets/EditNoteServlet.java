@@ -1,5 +1,7 @@
 package uk.ac.ucl.servlets;
 
+import java.io.IOException;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -10,12 +12,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import uk.ac.ucl.model.Model;
 import uk.ac.ucl.model.ModelFactory;
 
-
-import java.io.IOException;
-
 @WebServlet("/edit-note.html")
 public class EditNoteServlet extends HttpServlet
 {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Model model = ModelFactory.getModel();
@@ -24,8 +24,8 @@ public class EditNoteServlet extends HttpServlet
         int noteId = Integer.parseInt(stringId);
 
         //get list contents from webpage form
-        String noteTitle = request.getParameter("list_name");
-        String noteContent = request.getParameter("list_text");
+        String noteTitle = request.getParameter("noteTitle");
+        String noteContent = request.getParameter("noteContent");
 
         model.editNote(noteId, noteTitle, noteContent);
 

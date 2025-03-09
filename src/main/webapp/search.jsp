@@ -10,15 +10,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>Search Notes</h1>
-  <nav>
-    <ul>
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="listNotes.jsp">All Notes</a></li>
-    </ul>
-  </nav>
-</header>
+<jsp:include page="header.jsp" />
 <main>
   <form action="searchNote" method="get">
     <label for="query">Search:</label>

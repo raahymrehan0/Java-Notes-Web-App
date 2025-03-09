@@ -1,22 +1,22 @@
 package uk.ac.ucl.model;
 
-import java.io.BufferedWriter;
-import java.io.Reader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.csv.CSVPrinter;
+import org.apache.commons.csv.CSVRecord;
 
 public class Model
 {
 
-  private static final String NOTES_CSV_PATH = "data/notes.csv";
+  private static final String NOTES_CSV_PATH = "data/notes_storage.csv";
 
   // Read notes from CSV
   public List<Note> readNotesFromCsv()
@@ -27,10 +27,7 @@ public class Model
     {
       for (CSVRecord record : csvParser)
       {
-        Note n = new Note();
-        n.setId(Integer.parseInt(record.get("id")));
-        n.setTitle(record.get("title"));
-        n.setContent(record.get("content"));
+        Note n = new Note(Integer.parseInt(record.get("id")), record.get("title"), record.get("content"));
         notes.add(n);
       }
     }
@@ -44,14 +41,15 @@ public class Model
   // Write notes to CSV
   public void writeNotesToCsv(List<Note> notes)
   {
-    try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(NOTES_CSV_PATH));
-         CSVPrinter csvPrinter = new CSVPrinter(writer,
-                 CSVFormat.DEFAULT.withHeader("id","title","content")))
+    try (Writer writer = new FileWriter(NOTES_CSV_PATH);
+         CSVPrinter csvPrinter = new CSVPrinter(
+                 writer, CSVFormat.DEFAULT.withHeader("id","title","content")))
     {
       for (Note note : notes)
       {
         csvPrinter.printRecord(note.getId(), note.getTitle(), note.getContent());
       }
+
       csvPrinter.flush();
     }
     catch (IOException e)
@@ -65,10 +63,7 @@ public class Model
   {
     List<Note> notes = readNotesFromCsv();
     int newId = notes.size() + 1;
-    Note n = new Note();
-    n.setId(newId);
-    n.setTitle(title);
-    n.setContent(content);
+    Note n = new Note(newId, title, content);
     notes.add(n);
     writeNotesToCsv(notes);
   }

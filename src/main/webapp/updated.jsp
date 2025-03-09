@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <jsp:include page="/meta.jsp"/>
   <title>Notes Updated</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>

@@ -10,16 +10,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>View Note</h1>
-  <nav>
-    <ul>
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="listNotes.jsp">All Notes</a></li>
-      <li><a href="editNote.jsp?id=${note.id}">Edit Note</a></li>
-    </ul>
-  </nav>
-</header>
+<jsp:include page="header.jsp" />
 <main>
   <article>
     <h2>${note.label}</h2>

@@ -1,5 +1,8 @@
 package uk.ac.ucl.servlets;
 
+import java.io.IOException;
+import java.util.List;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -11,13 +14,10 @@ import uk.ac.ucl.model.Model;
 import uk.ac.ucl.model.ModelFactory;
 import uk.ac.ucl.model.Note;
 
-
-import java.io.IOException;
-import java.util.List;
-
 @WebServlet("/notes.html")
 public class NotesServlet extends HttpServlet
 {
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Model model = ModelFactory.getModel();
