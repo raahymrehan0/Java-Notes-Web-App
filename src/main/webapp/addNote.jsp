@@ -1,8 +1,12 @@
+<%@ page import="java.util.List" %>
+<%@ page import="uk.ac.ucl.model.Model" %>
+<%@ page import="uk.ac.ucl.model.ModelFactory" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
+  <jsp:include page="/meta.jsp"/>
   <title>Add Note</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -18,7 +22,7 @@
 </header>
 <main>
   <section>
-    <form action="addNote" method="post">
+    <form action="add-note.html" method="post">
       <div>
         <label for="noteLabel">Label:</label>
         <input type="text" id="noteLabel" name="label" required>

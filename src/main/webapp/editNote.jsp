@@ -11,7 +11,7 @@
 <main>
   <section>
     <h1>Edit Note</h1>
-    <form action="editNote" method="post">
+    <form action="edit-note.html" method="post">
       <input type="hidden" name="id" value="${note.id}">
       <div>
         <label for="noteLabel">Label:</label>
