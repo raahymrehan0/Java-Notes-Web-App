@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="header.jsp" />
 <main>
-  <form action="searchNote" method="get">
+  <form action="searchNote.jsp" method="get">
     <label for="query">Search:</label>
     <input type="text" id="query" name="query" placeholder="Enter search term...">
     <button type="submit">Search</button>
@@ -22,7 +22,7 @@
       <h2>Results:</h2>
       <ul>
         <c:forEach var="note" items="${searchResults}">
-          <li><a href="viewNote.jsp?id=${note.id}">${note.label}</a></li>
+          <li><a href="viewNote.jsp?id=${note.id}">${note.title}</a></li>
         </c:forEach>
       </ul>
     </c:if>
