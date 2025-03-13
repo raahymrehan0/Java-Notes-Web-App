@@ -77,7 +77,7 @@ public class Model
   // Get note by ID
   public Note getNoteById(int id)
   {
-    for (Note n : readNotesFromCsv())
+    for (Note n : getAllNotes())
     {
       if (n.getId() == id)
       {
@@ -90,7 +90,7 @@ public class Model
   // Delete a note
   public void deleteNote(int id)
   {
-    List<Note> notes = readNotesFromCsv();
+    List<Note> notes = getAllNotes();
     notes.removeIf(n -> n.getId() == id);
     writeNotesToCsv(notes);
   }
@@ -110,6 +110,7 @@ public class Model
     }
     writeNotesToCsv(notes);
   }
+
 
   // The example code in this class should be replaced by your Model class code.
   // The data should be stored in a suitable data structure.

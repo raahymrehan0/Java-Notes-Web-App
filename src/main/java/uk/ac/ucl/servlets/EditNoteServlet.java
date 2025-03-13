@@ -15,7 +15,6 @@ import uk.ac.ucl.model.ModelFactory;
 @WebServlet("/edit-note.html")
 public class EditNoteServlet extends HttpServlet
 {
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Model model = ModelFactory.getModel();

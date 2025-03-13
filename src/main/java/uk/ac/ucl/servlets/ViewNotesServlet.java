@@ -14,19 +14,17 @@ import uk.ac.ucl.model.Model;
 import uk.ac.ucl.model.ModelFactory;
 import uk.ac.ucl.model.Note;
 
-@WebServlet("/notes.html")
-public class NotesServlet extends HttpServlet
+@WebServlet("/allNotes.html")
+public class ViewNotesServlet extends HttpServlet
 {
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Model model = ModelFactory.getModel();
         List<Note> notes = model.getAllNotes();  // Retrieve all notes
-
         request.setAttribute("notes", notes);
 
         ServletContext context = getServletContext();
-        RequestDispatcher dispatch = context.getRequestDispatcher("/listNotes.jsp");
+        RequestDispatcher dispatch = context.getRequestDispatcher("/allNotes.jsp");
         dispatch.forward(request, response);
     }
 }
