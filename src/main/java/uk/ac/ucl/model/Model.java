@@ -47,7 +47,13 @@ public class Model
     {
       for (Note note : notes)
       {
-        csvPrinter.printRecord(note.getId(), note.getTitle(), note.getContent());
+        csvPrinter.printRecord(
+                note.getId(),
+                note.getTitle(),
+                note.getContent(),
+                note.getURL(),
+                note.getImageURL()
+        );
       }
 
       csvPrinter.flush();
@@ -106,10 +112,29 @@ public class Model
         if (!newTitle.isEmpty()) n.setTitle(newTitle);
         if (!newContent.isEmpty()) n.setContent(newContent);
         if (!newURL.isEmpty()) n.setURL(newURL);
-        if (!newImage.isEmpty() n.setImageURL(newImage);)
+        if (!newImage.isEmpty()) n.setImageURL(newImage);
         break;
       }
     }
     writeNotesToCsv(notes);
+  }
+
+  public List<String> readFile(String fileName)
+  {
+    List<String> data = new ArrayList<>();
+
+    try (Reader reader = new FileReader(fileName);
+         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT))
+    {
+      for (CSVRecord csvRecord : csvParser)
+      {
+        // The first row of the file contains the column headers, so is not actual data.
+        data.add(csvRecord.get(0));
+      }
+    } catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    return data;
   }
 }

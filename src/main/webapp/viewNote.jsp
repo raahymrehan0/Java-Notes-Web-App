@@ -16,11 +16,13 @@
     {
   %>
   <article>
-    <h2><%=note.getTitle()%></h2>
-    <p><%=note.getContent()%></p>
-    <p><a href="<%=note.getURL()%>">
+    <h2>Title: <%=note.getTitle()%></h2>
+    <p>Content: <%=note.getContent()%></p>
+    <p>URL: <%=note.getURL()%></p>
+    <p>Image: </p>
+    <p>
       <img src="<%=note.getImageURL()%>" alt="<%=note.getTitle()%>">
-
+    </p>
     <div class="actions">
       <a href="editNote.html?id=<%=note.getId()%>">Edit</a> |
       <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a> |

@@ -12,7 +12,7 @@
   <section>
     <h1>Your Notes Have Been Updated</h1>
     <p>Your notes have been updated successfully.</p>
-    <a href="allNotes.jsp">View All Notes</a>
+    <a href="index.jsp">Home</a>
   </section>
 </main>
 <jsp:include page="footer.jsp" />
