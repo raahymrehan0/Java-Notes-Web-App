@@ -25,8 +25,10 @@ public class EditNoteServlet extends HttpServlet
         //get list contents from webpage form
         String noteTitle = request.getParameter("noteTitle");
         String noteContent = request.getParameter("noteContent");
+        String noteURL = request.getParameter("noteURL");
+        String noteImage = request.getParameter("noteImage");
 
-        model.editNote(noteId, noteTitle, noteContent);
+        model.editNote(noteId, noteTitle, noteContent, noteURL, noteImage);
 
         ServletContext context = getServletContext();
         RequestDispatcher dispatcher = context.getRequestDispatcher("/updated.jsp");

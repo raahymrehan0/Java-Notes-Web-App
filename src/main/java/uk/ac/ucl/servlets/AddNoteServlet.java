@@ -22,8 +22,10 @@ public class AddNoteServlet extends HttpServlet
         // Get note details from the form
         String noteTitle = request.getParameter("noteTitle");
         String noteContent = request.getParameter("noteContent");
+        String noteURL = request.getParameter("noteURL");
+        String noteImage = request.getParameter("noteImage");
         // Add the new note to the model
-        model.addNote(noteTitle, noteContent);
+        model.addNote(noteTitle, noteContent, noteURL, noteImage);
 
         // Forward to the confirmation page
         ServletContext context = getServletContext();

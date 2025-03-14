@@ -4,13 +4,37 @@ public class Note
 {
     private String title;
     private String content;
+    private String URL;
+    private String imageURL;
     private int Id;
 
-    public Note(int Id, String title, String content)
+    public Note(int Id, String title, String content, String URL, String imageURL)
     {
         this.Id = Id;
         this.title = title;
         this.content = content;
+        this.URL = URL;
+        this.imageURL = imageURL;
+    }
+
+    public String getURL()
+    {
+        return URL;
+    }
+
+    public void setURL(String URL)
+    {
+        this.URL = URL;
+    }
+
+    public String getImageURL()
+    {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL)
+    {
+        this.imageURL = imageURL;
     }
 
     public int getId()

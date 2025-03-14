@@ -35,7 +35,7 @@
         <tr>
             <td><a href="viewNote.html?id=<%=note.getId()%>"><%=note.getTitle()%></a></td>
             <td>
-                <a href="editNote.html?id=<%=note.getId()%>">Edit</a> |
+                <a href="editNote.jsp?id=<%=note.getId()%>">Edit</a> |
                 <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
         </tr>

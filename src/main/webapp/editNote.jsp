@@ -11,10 +11,10 @@
 <main>
   <section>
     <h1>Edit Note</h1>
-    <form action="edit-note.html" method="post">
+    <form action="editNote.html" method="post">
       <input type="hidden" name="id" value="${note.id}">
       <div>
-        <label for="noteTitle">Label:</label>
+        <label for="noteTitle">Title:</label>
         <input type="text" id="noteTitle" name="noteTitle" value="${note.title}" required>
       </div>
       <div>

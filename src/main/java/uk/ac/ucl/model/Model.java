@@ -27,7 +27,7 @@ public class Model
     {
       for (CSVRecord record : csvParser)
       {
-        Note n = new Note(Integer.parseInt(record.get("id")), record.get("title"), record.get("content"));
+        Note n = new Note(Integer.parseInt(record.get("id")), record.get("title"), record.get("content"), record.get("URL"), record.get("image"));
         notes.add(n);
       }
     }
@@ -43,7 +43,7 @@ public class Model
   {
     try (Writer writer = new FileWriter(NOTES_CSV_PATH);
          CSVPrinter csvPrinter = new CSVPrinter(
-                 writer, CSVFormat.DEFAULT.withHeader("id","title","content")))
+                 writer, CSVFormat.DEFAULT.withHeader("id","title","content","URL","image")))
     {
       for (Note note : notes)
       {
@@ -59,11 +59,11 @@ public class Model
   }
 
   // Add a note
-  public void addNote(String title, String content)
+  public void addNote(String title, String content, String URL, String image)
   {
     List<Note> notes = readNotesFromCsv();
     int newId = notes.size() + 1;
-    Note n = new Note(newId, title, content);
+    Note n = new Note(newId, title, content, URL, image);
     notes.add(n);
     writeNotesToCsv(notes);
   }
@@ -96,7 +96,7 @@ public class Model
   }
 
   // Edit a note
-  public void editNote(int id, String newTitle, String newContent)
+  public void editNote(int id, String newTitle, String newContent, String newURL, String newImage)
   {
     List<Note> notes = readNotesFromCsv();
     for (Note n : notes)
@@ -105,47 +105,11 @@ public class Model
       {
         if (!newTitle.isEmpty()) n.setTitle(newTitle);
         if (!newContent.isEmpty()) n.setContent(newContent);
+        if (!newURL.isEmpty()) n.setURL(newURL);
+        if (!newImage.isEmpty() n.setImageURL(newImage);)
         break;
       }
     }
     writeNotesToCsv(notes);
-  }
-
-
-  // The example code in this class should be replaced by your Model class code.
-  // The data should be stored in a suitable data structure.
-
-  public List<String> getPatientNames()
-  {
-    return readFile("data/patients100.csv");
-  }
-
-  // This method illustrates how to read csv data from a file.
-  // The data files are stored in the root directory of the project (the directory your project is in),
-  // in the directory named data.
-  public List<String> readFile(String fileName)
-  {
-    List<String> data = new ArrayList<>();
-
-    try (Reader reader = new FileReader(fileName);
-         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT))
-    {
-      for (CSVRecord csvRecord : csvParser)
-      {
-        // The first row of the file contains the column headers, so is not actual data.
-        data.add(csvRecord.get(0));
-      }
-    } catch (IOException e)
-    {
-      e.printStackTrace();
-    }
-    return data;
-  }
-
-  // This also returns dummy data. The real version should use the keyword parameter to search
-  // the data and return a list of matching items.
-  public List<String> searchFor(String keyword)
-  {
-    return List.of("Search keyword is: "+ keyword, "result1", "result2", "result3");
   }
 }

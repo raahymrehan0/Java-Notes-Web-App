@@ -20,6 +20,14 @@
         <input type="text" id = "noteContent" name="noteContent" required>
       </div>
       <div>
+        <label for="noteURL">URL:</label>
+        <input type="text" id="noteURL" name="noteURL" required>
+      </div>
+      <div>
+        <label for="noteImage">Image URL:</label>
+        <input type="text" id="noteImage" name="noteImage" required>
+      </div>
+      <div>
         <button type="submit">Add Note</button>
       </div>
     </form>

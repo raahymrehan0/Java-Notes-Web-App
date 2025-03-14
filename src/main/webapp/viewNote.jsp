@@ -18,6 +18,8 @@
   <article>
     <h2><%=note.getTitle()%></h2>
     <p><%=note.getContent()%></p>
+    <p><a href="<%=note.getURL()%>">
+      <img src="<%=note.getImageURL()%>" alt="<%=note.getTitle()%>">
 
     <div class="actions">
       <a href="editNote.html?id=<%=note.getId()%>">Edit</a> |
