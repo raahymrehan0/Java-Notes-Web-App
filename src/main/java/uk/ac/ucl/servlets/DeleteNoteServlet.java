@@ -12,7 +12,7 @@ import uk.ac.ucl.model.ModelFactory;
 
 import java.io.IOException;
 
-@WebServlet("/delete-note.html")
+@WebServlet("/deleteNote.html")
 public class DeleteNoteServlet extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

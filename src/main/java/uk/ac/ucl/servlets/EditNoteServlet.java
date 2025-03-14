@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import uk.ac.ucl.model.Model;
 import uk.ac.ucl.model.ModelFactory;
 
-@WebServlet("/edit-note.html")
+@WebServlet("/editNote.html")
 public class EditNoteServlet extends HttpServlet
 {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
