@@ -15,21 +15,6 @@
     <input type="text" id="searchstring" name="searchstring" placeholder="Enter search term..." required>
     <button type="submit">Search</button>
   </form>
-
-  <div id="results">
-    <c:if test="${not empty result}">
-      <h3>Search Results</h3>
-      <ul>
-        <c:forEach var="noteInfo" items="${result}">
-          <li><a href="viewNote.html?id=${noteInfo.id}">${noteInfo.title}</a></li>
-        </c:forEach>
-      </ul>
-    </c:if>
-
-    <c:if test="${empty result && param.searchstring != null}">
-      <p>No matching notes found.</p>
-    </c:if>
-  </div>
 </main>
 <jsp:include page="footer.jsp" />
 </body>

@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uk.ac.ucl.model.Note" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,10 +33,10 @@
                 if (count >= 3) break;
         %>
         <tr>
-            <td><a href="viewNote?id=<%=note.getId()%>"><%=note.getTitle()%></a></td>
+            <td><a href="viewNote.html?id=<%=note.getId()%>"><%=note.getTitle()%></a></td>
             <td>
-                <a href="editNote?id=<%=note.getId()%>">Edit</a> |
-                <a href="deleteNote?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="editNote.html?id=<%=note.getId()%>">Edit</a> |
+                <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
         </tr>
         <%

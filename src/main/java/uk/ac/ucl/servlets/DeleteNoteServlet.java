@@ -25,7 +25,7 @@ public class DeleteNoteServlet extends HttpServlet
         model.deleteNote(noteId);
 
         ServletContext context = getServletContext();
-        RequestDispatcher dispatcher = context.getRequestDispatcher("/deleted.jsp");
+        RequestDispatcher dispatcher = context.getRequestDispatcher("/updated.jsp");
         dispatcher.forward(request, response);
     }
 }
