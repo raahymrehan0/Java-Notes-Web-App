@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,22 @@
   <section>
     <h1>Edit Note</h1>
     <form action="editNote.html" method="post">
-      <input type="hidden" name="id" value="${note.id}">
+      <input type="hidden" name="id">
       <div>
         <label for="noteTitle">Title:</label>
-        <input type="text" id="noteTitle" name="noteTitle" value="${note.title}" required>
+        <input type="text" id="noteTitle" name="noteTitle" required>
       </div>
       <div>
         <label for="noteContent">Content:</label>
-        <textarea id="noteContent" name="noteContent" required>${note.content}</textarea>
+        <input type="text" id="noteContent" name="noteContent" required>
+      </div>
+      <div>
+        <label for="noteURL">URL:</label>
+        <input type="text" id="noteURL" name="noteURL">
+      </div>
+      <div>
+        <label for="noteImage">Image:</label>
+        <input type="text" id="noteImage" name="noteImage">
       </div>
       <div>
         <button type="submit">Update Note</button>

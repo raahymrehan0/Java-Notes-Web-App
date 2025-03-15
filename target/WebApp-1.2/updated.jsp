@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,6 @@
   <section>
     <h1>Your Notes Have Been Updated</h1>
     <p>Your notes have been updated successfully.</p>
-    <a href="allNotes.jsp">View All Notes</a>
   </section>
 </main>
 <jsp:include page="footer.jsp" />
