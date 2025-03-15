@@ -16,7 +16,7 @@
     {
   %>
   <article>
-    <h2>Category: <%note.getCategory()%></h2>
+    <h2>Category: <%=%>note.getCategory()%></h2>
     <h2>Title: <%=note.getTitle()%></h2>
     <p>Content: <%=note.getContent()%></p>
     <p>URL: <%=note.getURL()%></p>
