@@ -27,8 +27,9 @@ public class EditNoteServlet extends HttpServlet
         String noteContent = request.getParameter("noteContent");
         String noteURL = request.getParameter("noteURL");
         String noteImage = request.getParameter("noteImage");
+        String noteCategory = request.getParameter("noteCategory");
 
-        model.editNote(noteId, noteTitle, noteContent, noteURL, noteImage);
+        model.editNote(noteId, noteTitle, noteContent, noteURL, noteImage, noteCategory);
 
         ServletContext context = getServletContext();
         RequestDispatcher dispatcher = context.getRequestDispatcher("/updated.jsp");

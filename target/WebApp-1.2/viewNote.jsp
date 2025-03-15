@@ -16,6 +16,7 @@
     {
   %>
   <article>
+    <h2>Category: <%note.getCategory()%></h2>
     <h2>Title: <%=note.getTitle()%></h2>
     <p>Content: <%=note.getContent()%></p>
     <p>URL: <%=note.getURL()%></p>
@@ -24,7 +25,7 @@
       <img src="<%=note.getImageURL()%>" alt="<%=note.getTitle()%>">
     </p>
     <div class="actions">
-      <a href="editNote.html?id=<%=note.getId()%>">Edit</a> |
+      <a href="editNote.jsp?id=<%=note.getId()%>">Edit</a> |
       <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a> |
       <a href="allNotes.html">Back to All Notes</a>
     </div>

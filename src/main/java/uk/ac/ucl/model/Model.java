@@ -27,7 +27,7 @@ public class Model
     {
       for (CSVRecord record : csvParser)
       {
-        Note n = new Note(Integer.parseInt(record.get("id")), record.get("title"), record.get("content"), record.get("URL"), record.get("image"));
+        Note n = new Note(Integer.parseInt(record.get("id")), record.get("title"), record.get("content"), record.get("URL"), record.get("image"), record.get("category"));
         notes.add(n);
       }
     }
@@ -43,7 +43,7 @@ public class Model
   {
     try (Writer writer = new FileWriter(NOTES_CSV_PATH);
          CSVPrinter csvPrinter = new CSVPrinter(
-                 writer, CSVFormat.DEFAULT.withHeader("id","title","content","URL","image")))
+                 writer, CSVFormat.DEFAULT.withHeader("id","title","content","URL","image","category")))
     {
       for (Note note : notes)
       {
@@ -52,7 +52,8 @@ public class Model
                 note.getTitle(),
                 note.getContent(),
                 note.getURL(),
-                note.getImageURL()
+                note.getImageURL(),
+                note.getCategory()
         );
       }
 
@@ -64,12 +65,24 @@ public class Model
     }
   }
 
+  public void getNotesByCategory(String category)
+  {
+    List<Note> notes = readNotesFromCsv();
+    for (Note n : notes)
+    {
+      if (n.getCategory().equals(category))
+      {
+        System.out.println(n.getTitle());
+      }
+    }
+  }
+
   // Add a note
-  public void addNote(String title, String content, String URL, String image)
+  public void addNote(String title, String content, String URL, String image, String category)
   {
     List<Note> notes = readNotesFromCsv();
     int newId = notes.size() + 1;
-    Note n = new Note(newId, title, content, URL, image);
+    Note n = new Note(newId, title, content, URL, image, category);
     notes.add(n);
     writeNotesToCsv(notes);
   }
@@ -102,7 +115,7 @@ public class Model
   }
 
   // Edit a note
-  public void editNote(int id, String newTitle, String newContent, String newURL, String newImage)
+  public void editNote(int id, String newTitle, String newContent, String newURL, String newImage, String newCategory)
   {
     List<Note> notes = readNotesFromCsv();
     for (Note n : notes)
@@ -113,6 +126,7 @@ public class Model
         if (!newContent.isEmpty()) n.setContent(newContent);
         if (!newURL.isEmpty()) n.setURL(newURL);
         if (!newImage.isEmpty()) n.setImageURL(newImage);
+        if (!newCategory.isEmpty()) n.setCategory(newCategory);
         break;
       }
     }

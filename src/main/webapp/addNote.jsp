@@ -12,6 +12,10 @@
   <section>
     <form action="add-note.html" method="post">
       <div>
+        <label for="noteCategory">Category:</label>
+        <input type="text" id="noteCategory" name="noteCategory" required>
+      </div>
+      <div>
         <label for="noteTitle">Title:</label>
         <input type="text" id="noteTitle" name="noteTitle" required>
       </div>

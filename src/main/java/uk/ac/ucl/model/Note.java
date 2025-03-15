@@ -7,14 +7,17 @@ public class Note
     private String URL;
     private String imageURL;
     private int Id;
+    private String category;
 
-    public Note(int Id, String title, String content, String URL, String imageURL)
+    public Note(int Id, String title, String content, String URL, String imageURL, String category)
     {
         this.Id = Id;
         this.title = title;
         this.content = content;
         this.URL = URL;
         this.imageURL = imageURL;
+        this.category = category;
+
     }
 
     public String getURL()
@@ -65,5 +68,15 @@ public class Note
     public void setContent(String content)
     {
         this.content = content;
+    }
+
+    public String getCategory()
+    {
+        return category;
+    }
+
+    public void setCategory(String category)
+    {
+        this.category = category;
     }
 }

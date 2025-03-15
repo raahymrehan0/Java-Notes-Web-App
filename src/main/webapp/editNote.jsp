@@ -27,6 +27,10 @@
     <form action="editNote.html" method="post">
       <input type="hidden" name="id" value="<%=note.getId()%>">
       <div>
+        <label for="noteCategory">Category:</label>
+        <input type="text" id="noteCategory" name="noteCategory" required>
+      </div>
+      <div>
         <label for="noteTitle">Title:</label>
         <input type="text" id="noteTitle" name="noteTitle" value="<%=note.getTitle()%>" required>
       </div>
