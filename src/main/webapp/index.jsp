@@ -1,11 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
   <jsp:include page="meta.jsp" />
-  <title>Note Application - Home</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta charset="UTF-8">
   <title>Note Application - Home</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
