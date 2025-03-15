@@ -14,24 +14,19 @@
   <table>
     <thead>
     <tr>
-      <th>Title</th>
-      <th>Actions</th>
+      <th>Categories</th>
     </tr>
     </thead>
     <tbody>
     <%
-      List<Note> notes = (List<Note>) request.getAttribute("notes");
-      if (notes != null && !notes.isEmpty())
+      List<String> categories = (List<String>) request.getAttribute("categories");
+      if (categories != null && !categories.isEmpty())
       {
-        for (Note note : notes)
+        for (String category : categories)
         {
     %>
     <tr>
-      <td><a href="viewNote.html?id=<%=note.getId()%>"><%=note.getTitle()%></a></td>
-      <td>
-        <a href="editNote.jsp?id=<%=note.getId()%>">Edit</a> |
-        <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a>
-      </td>
+      <td><a href="notes.html?category=<%=category%>"><%=category%></a></td>
     </tr>
     <%
       }

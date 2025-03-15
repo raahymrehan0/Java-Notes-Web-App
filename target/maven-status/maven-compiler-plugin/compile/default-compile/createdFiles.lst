@@ -6,5 +6,6 @@ uk/ac/ucl/servlets/ViewNoteServlet.class
 uk/ac/ucl/servlets/ViewNotesServlet.class
 uk/ac/ucl/model/Model.class
 uk/ac/ucl/servlets/EditNoteServlet.class
+uk/ac/ucl/servlets/ViewCategoriesServlet.class
 uk/ac/ucl/model/Note.class
 uk/ac/ucl/model/ModelFactory.class

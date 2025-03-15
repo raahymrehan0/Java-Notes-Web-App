@@ -65,16 +65,32 @@ public class Model
     }
   }
 
-  public void getNotesByCategory(String category)
+  public List<Note> getNotesByCategory(String category)
   {
     List<Note> notes = readNotesFromCsv();
+    List<Note> notesByCategory = new ArrayList<>();
     for (Note n : notes)
     {
       if (n.getCategory().equals(category))
       {
-        System.out.println(n.getTitle());
+        notesByCategory.add(n);
       }
     }
+    return notesByCategory;
+  }
+
+  public List<String> getAllCategories()
+  {
+    List<String> categories = new ArrayList<>();
+    List<Note> notes = readNotesFromCsv();
+    for (Note n : notes)
+    {
+      if (!categories.contains(n.getCategory()))
+      {
+        categories.add(n.getCategory());
+      }
+    }
+    return categories;
   }
 
   // Add a note
