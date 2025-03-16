@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Notes Management System is a Java web application for efficiently organizing, categorizing, and retrieving textual information. This application provides a user-friendly interface for managing notes with associated metadata including titles, content, URLs, images, and categories.
+The Notes Management System is a Java web application for efficiently organising, categorising, and retrieving textual information. This application provides a user-friendly interface for managing notes with associated metadata including titles, content, URLs, images, and categories.
 
 ## Features
 
 Notes Management: Create, view, edit, and delete notes through an intuitive web interface
-Dynamic Categorization: Organize notes into automatically generated categories
-Intelligent Search: Find relevant categories with a smart search algorithm that prioritizes exact matches
+Dynamic Categorisation: Organise notes into automatically generated categories
+Intelligent Search: Find relevant categories with a smart search algorithm that prioritises exact matches
 Smart Results Display: Shows top 3 relevant results with graceful fallback for no matches
 Responsive Web Interface: Access notes from any modern web browser
-<span>## Technologies Used</span>
+## Technologies Used
 
 Java
 Jakarta Servlets
