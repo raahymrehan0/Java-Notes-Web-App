@@ -1,55 +1,40 @@
 <%@ page import="java.util.List" %>
-<%@ page import="uk.ac.ucl.model.Note" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <jsp:include page="meta.jsp" />
-    <title>Search Results</title>
+    <title>Category Search Results</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <jsp:include page="header.jsp" />
 <main>
-    <h2>Search Results for: "<%=request.getAttribute("searchTerm")%>"</h2>
+    <h2>Category Search Results for: "<%=request.getAttribute("searchTerm")%>"</h2>
 
     <%
-        List<Note> searchResults = (List<Note>) request.getAttribute("searchResults");
-        if (searchResults != null && !searchResults.isEmpty()) {
+        List<String> searchResults = (List<String>) request.getAttribute("searchResults");
+        Integer totalResults = (Integer) request.getAttribute("totalResults");
+        Boolean foundMatches = (Boolean) request.getAttribute("foundMatches");
     %>
-    <p>Showing top <%= Math.min(3, searchResults.size()) %> results:</p>
-    <table>
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <%
-            // Display only top 3 results
-            int count = 0;
-            for (Note note : searchResults) {
-                if (count >= 3) break;
-        %>
-        <tr>
-            <td><a href="viewNote.html?id=<%=note.getId()%>"><%=note.getTitle()%></a></td>
-            <td>
-                <a href="editNote.jsp?id=<%=note.getId()%>">Edit</a> |
-                <a href="deleteNote.html?id=<%=note.getId()%>" onclick="return confirm('Are you sure?')">Delete</a>
-            </td>
-        </tr>
-        <%
-                count++;
-            }
-        %>
-        </tbody>
-    </table>
 
-    <p><a href="search.jsp">New Search</a> | <a href="allNotes.html">View All Notes</a></p>
+    <% if (foundMatches) { %>
+    <p>Found <%= totalResults %> matching categories:</p>
     <% } else { %>
-    <p>No matching notes found.</p>
-    <p><a href="search.jsp">Try another search</a> | <a href="allNotes.html">View All Notes</a></p>
+    <p>No matching categories found. Showing top categories instead:</p>
+    <% } %>
+
+    <ul>
+        <% for (String category : searchResults) { %>
+        <li><a href="notes.html?category=<%=category%>"><%=category%></a></li>
+        <% } %>
+    </ul>
+
+    <% if (foundMatches && totalResults > 3) { %>
+    <p><em>Showing top 3 results. <%= totalResults - 3 %> more results available.</em></p>
+    <p><a href="allCategories.html">View all categories</a></p>
+    <% } else { %>
+    <p><a href="allCategories.html">View all categories</a></p>
     <% } %>
 </main>
 <jsp:include page="footer.jsp" />
