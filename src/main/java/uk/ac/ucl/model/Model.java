@@ -148,23 +148,4 @@ public class Model
     }
     writeNotesToCsv(notes);
   }
-
-  public List<String> readFile(String fileName)
-  {
-    List<String> data = new ArrayList<>();
-
-    try (Reader reader = new FileReader(fileName);
-         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT))
-    {
-      for (CSVRecord csvRecord : csvParser)
-      {
-        // The first row of the file contains the column headers, so is not actual data.
-        data.add(csvRecord.get(0));
-      }
-    } catch (IOException e)
-    {
-      e.printStackTrace();
-    }
-    return data;
-  }
 }
