@@ -1,40 +1,47 @@
 <%@ page import="java.util.List" %>
+<%@ page import="uk.ac.ucl.model.Note" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <jsp:include page="meta.jsp" />
-    <title>Category Search Results</title>
+    <title>Title Search Results</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <jsp:include page="header.jsp" />
 <main>
-    <h2>Category Search Results for: "<%=request.getAttribute("searchTerm")%>"</h2>
+    <h2>Title Search Results for: "<%=request.getAttribute("searchTerm")%>"</h2>
 
     <%
-        List<String> searchResults = (List<String>) request.getAttribute("searchResults");
-        Integer totalResults = (Integer) request.getAttribute("totalResults");
+        List<Note> searchResults = (List<Note>) request.getAttribute("searchResults");
+        Integer matchCount = (Integer) request.getAttribute("matchCount");
         Boolean foundMatches = (Boolean) request.getAttribute("foundMatches");
+        Boolean hasResults = (Boolean) request.getAttribute("hasResults");
+        int displayCount = Math.min(3, searchResults != null ? searchResults.size() : 0);
     %>
 
     <% if (foundMatches) { %>
-    <p>Found <%= totalResults %> matching categories:</p>
+    <p>Found <%= matchCount %> matching titles:</p>
+    <% } else if (hasResults) { %>
+    <p>No exact matches found. Showing top <%= displayCount %> results instead:</p>
     <% } else { %>
-    <p>No matching categories found. Showing top categories instead:</p>
+    <p>No matching notes found.</p>
     <% } %>
 
     <ul>
-        <% for (String category : searchResults) { %>
-        <li><a href="notes.html?category=<%=category%>"><%=category%></a></li>
+        <% if (searchResults != null && !searchResults.isEmpty()) { %>
+        <% for (int i = 0; i < displayCount; i++) { %>
+        <% Note note = searchResults.get(i); %>
+        <li><a href="viewNote.html?id=<%=note.getId()%>"><%=note.getTitle()%></a></li>
+        <% } %>
+        <% } else { %>
+        <li>No results found</li>
         <% } %>
     </ul>
 
-    <% if (foundMatches && totalResults > 3) { %>
-    <p><em>Showing top 3 results. <%= totalResults - 3 %> more results available.</em></p>
-    <p><a href="allCategories.html">View all categories</a></p>
-    <% } else { %>
-    <p><a href="allCategories.html">View all categories</a></p>
+    <% if (searchResults != null && searchResults.size() > 3) { %>
+    <p><em>Showing top 3 results. <%= searchResults.size() - 3 %> more results available.</em></p>
     <% } %>
 </main>
 <jsp:include page="footer.jsp" />
