@@ -1,5 +1,6 @@
 package uk.ac.ucl.model;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +17,7 @@ import org.apache.commons.csv.CSVRecord;
 public class Model
 {
 
-  private static final String NOTES_CSV_PATH = "data/notes_storage.csv";
+  private static final String NOTES_CSV_PATH = "data" + File.separator +  "notes_storage.csv"; // Path to the CSV file
 
   // Read notes from CSV
   public List<Note> readNotesFromCsv()
