@@ -36,7 +36,7 @@
       </div>
       <div>
         <label for="noteContent">Content:</label>
-        <input type="text" id="noteContent" name="noteContent" value="<%=note.getContent()%>" required>
+        <input type="text" id="noteContent" name="noteContent" value="<%=note.getContent()%>">
       </div>
       <div>
         <label for="noteURL">URL:</label>
