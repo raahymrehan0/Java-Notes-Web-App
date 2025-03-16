@@ -11,7 +11,7 @@
 <main>
   <h2>Search Notes</h2>
   <form action="searchResult.html" method="post">
-    <label for="searchstring">Search by title or content:</label>
+    <label for="searchstring">Search by category:</label>
     <input type="text" id="searchstring" name="searchstring" placeholder="Enter search term..." required>
     <button type="submit">Search</button>
   </form>
