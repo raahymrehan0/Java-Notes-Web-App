@@ -21,7 +21,52 @@ Maven for dependency management
 CSV for data persistence
 ## Project Structure
 
- src/ ├── main/ │ ├── java/ │ │ └── uk/ │ │ └── ac/ │ │ └── ucl/ │ │ ├── model/ │ │ │ ├── Model.java │ │ │ ├── ModelFactory.java │ │ │ └── Note.java │ │ └── servlets/ │ │ ├── AddNoteServlet.java │ │ ├── DeleteNoteServlet.java │ │ ├── EditNoteServlet.java │ │ ├── SearchServlet.java │ │ ├── ViewCategoriesServlet.java │ │ └── ViewNotesServlet.java │ ├── resources/ │ │ └── notes.csv │ └── webapp/ │ ├── footer.jsp │ ├── header.jsp │ ├── meta.jsp │ ├── search.jsp │ ├── searchResult.jsp │ ├── styles.css │ └── viewNotes.jsp ├── pom.xml └── README.md
+ - README.md
+- data
+  - notes_storage.csv
+- logfile.txt
+- pom.xml
+- src
+  - main
+    - java
+      - uk
+        - ac
+          - ucl
+            - main
+              - Main.java
+            - model
+              - Model.java
+              - ModelFactory.java
+              - Note.java
+            - servlets
+              - AddNoteServlet.java
+              - DeleteNoteServlet.java
+              - EditNoteServlet.java
+              - SearchServlet.java
+              - ViewCategoriesServlet.java
+              - ViewNoteServlet.java
+              - ViewNotesServlet.java
+    - webapp
+      - META-INF
+        - MANIFEST.MF
+      - WEB-INF
+        - web.xml
+      - addNote.jsp
+      - allCategories.jsp
+      - editNote.jsp
+      - footer.jsp
+      - header.jsp
+      - index.jsp
+      - meta.jsp
+      - search.jsp
+      - searchResult.jsp
+      - styles.css
+      - updated.jsp
+      - viewNote.jsp
+      - viewNotes.jsp
+- war-file
+  - WebApp-1.2.war
+
 
 ## Setup and Installation
 
