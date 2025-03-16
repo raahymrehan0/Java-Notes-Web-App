@@ -93,6 +93,8 @@ Category
 The application follows the Model-View-Controller pattern:
 
 
-Model: Handles data operations and business logic
+Model: Handles data operations and logic
+
 View: JSP pages for rendering content
+
 Controller: Servlets processing HTTP requests
