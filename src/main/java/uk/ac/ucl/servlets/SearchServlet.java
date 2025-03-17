@@ -14,7 +14,6 @@ import uk.ac.ucl.model.Note;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 @WebServlet("/searchResult.html")
 public class SearchServlet extends HttpServlet
