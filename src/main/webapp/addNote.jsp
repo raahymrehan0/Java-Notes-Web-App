@@ -37,6 +37,5 @@
     </form>
   </section>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

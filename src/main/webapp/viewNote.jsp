@@ -39,6 +39,5 @@
   <p><a href="allNotes.html">Back to All Notes</a></p>
   <% } %>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

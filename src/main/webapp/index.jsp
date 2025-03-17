@@ -14,6 +14,5 @@
     <p>Use this application to create, view, edit, and search your notes easily. Your notes are automatically saved and indexed.</p>
   </section>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

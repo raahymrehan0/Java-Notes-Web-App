@@ -16,6 +16,5 @@
     <button type="submit">Search</button>
   </form>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

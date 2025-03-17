@@ -44,6 +44,5 @@
     <p><em>Showing top 3 results. <%= searchResults.size() - 3 %> more results available.</em></p>
     <% } %>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

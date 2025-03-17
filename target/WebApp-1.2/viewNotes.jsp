@@ -41,6 +41,5 @@
   <p>There are no notes to display</p>
   <% } %>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>

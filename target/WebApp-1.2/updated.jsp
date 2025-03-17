@@ -14,6 +14,5 @@
     <p>Your notes have been updated successfully.</p>
   </section>
 </main>
-<jsp:include page="footer.jsp" />
 </body>
 </html>
