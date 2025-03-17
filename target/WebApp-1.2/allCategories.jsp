@@ -1,5 +1,4 @@
 <%@ page import="java.util.List" %>
-<%@ page import="uk.ac.ucl.model.Note" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>

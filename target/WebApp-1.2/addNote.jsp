@@ -21,15 +21,15 @@
       </div>
       <div>
         <label for="noteContent">Content:</label>
-        <input type="text" id = "noteContent" name="noteContent" required>
+        <input type="text" id = "noteContent" name="noteContent">
       </div>
       <div>
         <label for="noteURL">URL:</label>
-        <input type="text" id="noteURL" name="noteURL" required>
+        <input type="text" id="noteURL" name="noteURL">
       </div>
       <div>
         <label for="noteImage">Image URL:</label>
-        <input type="text" id="noteImage" name="noteImage" required>
+        <input type="text" id="noteImage" name="noteImage">
       </div>
       <div>
         <button type="submit">Add Note</button>

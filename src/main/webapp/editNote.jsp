@@ -51,7 +51,7 @@
       </div>
     </form>
     <% } else { %>
-    <p>Note not found. <a href="allNotes.html">Back to All Notes</a></p>
+    <p>Note not found. <a href="allCategories.html">Back to All Notes</a></p>
     <% } %>
   </section>
 </main>
